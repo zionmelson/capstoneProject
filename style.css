@@ -1,0 +1,32 @@
+* {
+  background-color: black;
+  color: aliceblue;
+  font-family: "Montserrat", sans-serif;
+  padding: 5px;
+}
+
+body {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+button {
+  border: none;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #fff;
+}
+
+button:hover {
+  color: yellowgreen;
+  cursor: pointer;
+}
+
+::placeholder {
+  color: aliceblue;
+}
