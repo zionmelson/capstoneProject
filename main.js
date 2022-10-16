@@ -2,7 +2,7 @@ import "./style.css";
 import lookup from "./scripts/lookup-city";
 
 document.querySelector("#app").innerHTML = `
-  <div>
+  <div id="main">
     <h1>Vacation Planner</h1>
     <input id="location" placeholder="enter a city..." />
     <button id="submit">enter</button>
@@ -20,7 +20,7 @@ document.querySelector("#app").innerHTML = `
           justify-content: center;
           align-items: center;
           min-height: 30rem;
-          min-width: 30rem;
+          min-width: 25rem;
           padding: 2rem;
         }
         #heading{

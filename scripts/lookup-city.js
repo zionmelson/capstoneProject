@@ -27,11 +27,14 @@ export default async function lookup() {
       `https://airport-info.p.rapidapi.com/airport?iata=${userInput}`,
       infoOps
     );
+
+    const dataInfo = await fetchData.json();
+
     const fetchPic = await fetch(
-      `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=${userInput}%20swift&pageNumber=1&pageSize=10&autoCorrect=true`,
+      `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=${dataInfo.state}`,
       picOps
     );
-    const dataInfo = await fetchData.json();
+
     const picInfo = await fetchPic.json();
 
     console.log(dataInfo);
@@ -41,7 +44,7 @@ export default async function lookup() {
 
     cityCard.setAttribute("location", dataInfo.location);
     cityCard.setAttribute("website", dataInfo.website);
-    cityCard.setAttribute("image", picInfo.value[0].url);
+    cityCard.setAttribute("image", picInfo.value[1].url);
     document.body.appendChild(cityCard);
   } catch (err) {
     console.error(err);
