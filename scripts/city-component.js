@@ -1,4 +1,4 @@
-export class CityCard extends HTMLElement {
+export default class CityCard extends HTMLElement {
   constructor() {
     super();
   }

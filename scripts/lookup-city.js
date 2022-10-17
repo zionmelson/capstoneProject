@@ -1,57 +1,28 @@
-import { CityCard } from "./output-city";
-
-const apikey = import.meta.env.VITE_API_KEY;
+import CityCard from "./city-component";
+import getData from "./functions/data-fetch";
+import getPic from "./functions/picture-fetch";
+import getInputs from "./functions/get-inputs";
+import createElement from "./functions/create-element";
 
 export default async function lookup() {
+  const results = document.getElementById("results");
+
+  results.textContent = "";
   try {
-    const userInput = document.getElementById("location").value;
+    const userInput = await getInputs();
     console.log(userInput);
 
-    const infoOps = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": `${apikey}`,
-        "X-RapidAPI-Host": "airport-info.p.rapidapi.com",
-      },
-    };
-
-    const picOps = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": `${apikey}`,
-        "X-RapidAPI-Host": "contextualwebsearch-websearch-v1.p.rapidapi.com",
-      },
-    };
-
-    const fetchData = await fetch(
-      `https://airport-info.p.rapidapi.com/airport?iata=${userInput}`,
-      infoOps
-    );
-
-    const dataInfo = await fetchData.json();
-
-    const fetchPic = await fetch(
-      `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=${dataInfo.state}`,
-      picOps
-    );
-
-    const picInfo = await fetchPic.json();
+    const dataInfo = await getData(userInput);
+    const picInfo = await getPic(dataInfo.state);
 
     console.log(dataInfo);
     console.log(picInfo);
 
-    const cityCard = document.createElement("city-card");
-
-    cityCard.setAttribute("location", dataInfo.location);
-    cityCard.setAttribute("website", dataInfo.website);
-    cityCard.setAttribute("image", picInfo.value[1].url);
-    document.body.appendChild(cityCard);
+    const cityCard = await createElement(dataInfo, picInfo);
+    results.appendChild(cityCard);
   } catch (err) {
     console.error(err);
   }
 }
 
 customElements.define("city-card", CityCard);
-
-// add another api
-// https://rapidapi.com/collection/city-data-api

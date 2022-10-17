@@ -7,6 +7,7 @@ document.querySelector("#app").innerHTML = `
     <input id="location" placeholder="enter a city..." />
     <button id="submit">enter</button>
   </div>
+  <div id="results"></div>
   <template id="output-template">
     <style>
         img {
