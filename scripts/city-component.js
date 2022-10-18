@@ -4,7 +4,7 @@ export default class CityCard extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ["location", "website", "image"];
+    return ["location", "website", "image" /*, "flights", "attractions"*/];
   }
 
   attributeChangedCallback(property, oldValue, newValue) {
@@ -22,6 +22,14 @@ export default class CityCard extends HTMLElement {
     if (property === "image") {
       this.image.src = newValue;
     }
+    /*
+    if (property === "flights") {
+      this.flights.textContent = newValue;
+    }
+    if (property === "attractions") {
+      this.attractions.textContent = newValue;
+    }
+    */
   }
 
   connectedCallback() {
@@ -35,6 +43,8 @@ export default class CityCard extends HTMLElement {
     this.location = this.shadowRoot.querySelector("#location");
     this.website = this.shadowRoot.querySelector("#website");
     this.image = this.shadowRoot.querySelector("#image");
+    // this.flights = this.shadowRoot.querySelector("#flights")
+    // this.attactions = this.shadowRoot.querySelector("#attractions")
 
     const location = this.getAttribute("location");
     if (location) {
@@ -51,5 +61,17 @@ export default class CityCard extends HTMLElement {
     if (image) {
       this.image.src = image;
     }
+
+    /*
+    const flights = this.getAttribute("flights");
+    if (flights) {
+      this.flights.textContent = flights
+    }
+
+    const attractions = this.getAttribute("attractions");
+    if (attractions) {
+      this.attractions.textContent = attractions;
+    }
+    */
   }
 }

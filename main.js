@@ -4,7 +4,7 @@ import lookup from "./scripts/lookup-city";
 document.querySelector("#app").innerHTML = `
   <div id="main">
     <h1>Vacation Planner</h1>
-    <input id="location" placeholder="enter a city..." />
+    <input id="location" placeholder="enter an airport..." />
     <button id="submit">enter</button>
   </div>
   <div id="results"></div>
@@ -48,7 +48,6 @@ document.querySelector("#app").innerHTML = `
     </div>
   </template>
 `;
-
 const button = document.querySelector("#submit");
 
 button.addEventListener("click", (e) => {
