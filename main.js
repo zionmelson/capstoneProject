@@ -83,8 +83,8 @@ document.querySelector("#app").innerHTML = `
       <div id="main-section">
         <div class="middle" id="info"> 
           <img class="middle" id="image" src="" /> 
-          <p> ATL BABY </p>
-          <p> Airport name </p>
+          <p>ATL BABY</p>
+          <p>Airport name</p>
           <div id="next-flight">
             <img src="./assets/icons/radar.png" id="radar-image">
             <p class="text"> Next avaible flight </p>
