@@ -77,8 +77,8 @@ document.querySelector("#app").innerHTML = `
     </style>
     <div id="city-output">
       <div id="heading">
-        <h1>Let us plan your Vacation to:</h4>
-        <h2 id="location"></h1>
+        <h1>Let us plan your Vacation to:</h1>
+        <h2 id="location"></h2>
       </div>
       <div id="main-section">
         <div class="middle" id="info"> 
