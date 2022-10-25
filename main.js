@@ -56,7 +56,8 @@ document.querySelector("#app").innerHTML = `
         }
         #next-flight{
           position: relative;
-          width: 99%;
+          width: 100%;
+          box-sizing: border-box;
           height: 15%;
           background: white;
           border: 3px solid orange;
