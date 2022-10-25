@@ -25,3 +25,7 @@ export default async function lookup() {
 }
 
 customElements.define("city-card", CityCard);
+
+// add a few apis
+// https://rapidapi.com/aedbx-aedbx/api/aerodatabox
+//
