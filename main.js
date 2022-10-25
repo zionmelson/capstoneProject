@@ -87,7 +87,7 @@ document.querySelector("#app").innerHTML = `
           <p>Airport name</p>
           <div id="next-flight">
             <img src="./assets/icons/radar.png" id="radar-image">
-            <p class="text"> Next avaible flight </p>
+            <p class="text">Next available flight</p>
           </div>
         </div>
         <div class="middle" id="attractions"> 
