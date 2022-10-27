@@ -1,8 +1,8 @@
-import CityCard from "./city-component";
-import getData from "./functions/data-fetch";
-import getPic from "./functions/picture-fetch";
+import CityCard from "./component";
+import getData from "./functions/fetch-airport-info";
+import getPic from "./functions/fetch-airport-picture";
 import getInputs from "./functions/get-inputs";
-import createElement from "./functions/create-element";
+import createElement from "./functions/set-component-attributes";
 import reset from "./functions/reset";
 
 export default async function lookup() {
@@ -14,8 +14,8 @@ export default async function lookup() {
     const dataInfo = await getData(userInput);
     const picInfo = await getPic(dataInfo.location);
 
-    console.log(dataInfo);
-    console.log(picInfo);
+    //console.log(dataInfo);
+    //console.log(picInfo);
 
     const cityCard = await createElement(dataInfo, picInfo);
     results.appendChild(cityCard);

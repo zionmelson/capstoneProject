@@ -4,16 +4,14 @@ export default class CityCard extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ["location", "website", "image" /*, "flights", "attractions"*/];
+    return ["location", "website", "image", "costs"];
   }
 
   attributeChangedCallback(property, oldValue, newValue) {
     if (oldValue === newValue) return;
 
     if (property === "location") {
-      if (this.location) {
-        this.location.textContent = newValue;
-      }
+      this.location.textContent = newValue;
     }
     if (property === "website") {
       this.website.textContent = newValue;
@@ -22,14 +20,15 @@ export default class CityCard extends HTMLElement {
     if (property === "image") {
       this.image.src = newValue;
     }
-    /*
-    if (property === "flights") {
-      this.flights.textContent = newValue;
+    if (property === "description") {
+      this.description.textContent = newValue;
     }
-    if (property === "attractions") {
-      this.attractions.textContent = newValue;
+    if (property === "airport") {
+      this.airport.textContent = newValue;
     }
-    */
+    if (property === "costs") {
+      this.costs.textContent = newValue;
+    }
   }
 
   connectedCallback() {
@@ -42,9 +41,10 @@ export default class CityCard extends HTMLElement {
 
     this.location = this.shadowRoot.querySelector("#location");
     this.website = this.shadowRoot.querySelector("#website");
-    this.image = this.shadowRoot.querySelector("#image");
-    // this.flights = this.shadowRoot.querySelector("#flights")
-    // this.attactions = this.shadowRoot.querySelector("#attractions")
+    this.description = this.shadowRoot.querySelector("#airport-description");
+    this.airport = this.shadowRoot.querySelector("#airport-name");
+    this.image = this.shadowRoot.querySelector("#airport-image");
+    this.costs = this.shadowRoot.querySelector(".costs");
 
     const location = this.getAttribute("location");
     if (location) {
@@ -62,16 +62,19 @@ export default class CityCard extends HTMLElement {
       this.image.src = image;
     }
 
-    /*
-    const flights = this.getAttribute("flights");
-    if (flights) {
-      this.flights.textContent = flights
+    const description = this.getAttribute("description");
+    if (description) {
+      this.description.textContent = description;
     }
 
-    const attractions = this.getAttribute("attractions");
-    if (attractions) {
-      this.attractions.textContent = attractions;
+    const airport = this.getAttribute("airport-name");
+    if (airport) {
+      this.airport.textContent = airport;
     }
-    */
+
+    const costs = this.getAttribute("costs");
+    if (costs) {
+      this.costs.textContent = costs;
+    }
   }
 }
