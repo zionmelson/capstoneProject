@@ -14,7 +14,7 @@ export default async function lookup() {
     const dataInfo = await getData(userInput);
     const picInfo = await getPic(dataInfo.location);
 
-    //console.log(dataInfo);
+    console.log(dataInfo);
     //console.log(picInfo);
 
     const cityCard = await createElement(dataInfo, picInfo);

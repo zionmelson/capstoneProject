@@ -28,12 +28,10 @@ document.querySelector("#app").innerHTML = `
             position: relative;
             text-align: center;
             font-weight: bold;
-            border: 3px solid red;
           }
           .heading-section{
             font-size: 20px;
             position: relative;
-            border: 3px solid purple;
           }
           .main-section{
             height: 100%;
@@ -41,7 +39,6 @@ document.querySelector("#app").innerHTML = `
             display: flex;
             flex-direction: row;
             padding: 2rem;
-            border: 3px solid green;
           }
           .info-elements {
             position: relative;
@@ -49,12 +46,10 @@ document.querySelector("#app").innerHTML = `
             min-height: 10rem;
             max-height: 25rem;
             margin: 1rem;
-            border: 3px solid yellow;
           }
           .footer-section {
             top: 1.5rem;
             height: 3rem;
-            border: 3px solid pink;
           }
           .website-input{
             color: white;
