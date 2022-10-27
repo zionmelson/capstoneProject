@@ -13,5 +13,9 @@
   },
   "dependencies": {
     "axios": "^1.1.2"
-  }
+  },
+  "main": "main.js",
+  "repository": "https://github.com/zionmelson/capstoneProject.git",
+  "author": "Zion Melson <zionmelson@gmail.com>",
+  "license": "MIT"
 }
