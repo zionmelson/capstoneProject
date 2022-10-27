@@ -4,15 +4,16 @@ import lookup from "./scripts/lookup-city";
 document.querySelector("#app").innerHTML = `
     <div id="main">
       <h1>Moving Planner</h1>
-      <input id="location" placeholder="enter an airport..." />
+      <label for="location">Pick a City</label>
+      <select id="location">
+        <option value="ATL">Atlanta</option>
+        <option value="LAX">Los Angeles</option>
+        <option value="LGA">New York</option>
+        <option value="DCA">Washington DC</option>
+      </select>
       <button id="submit">enter</button>
     </div>
     <div id="results">
-      <city-card location="Atlanta, Georgia, United States" 
-        website="http://www.atl.com/" 
-        image="https://i.ibb.co/52zkWYD/top-otolaryngology-facial-plastic-surgery-doctors-atlanta-georgia-usa.jpg" 
-        description="Atlanta, GA"
-        airport-name="Hartsfield Jackson"></city-card>
     </div>
     <template id="output-template">
       <style>

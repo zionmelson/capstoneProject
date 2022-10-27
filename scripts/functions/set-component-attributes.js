@@ -15,7 +15,6 @@ export default async function createElement(dataInfo, picInfo) {
 
   prices.map((price) => {
     console.log(price.avg);
-    cityCard.setAttribute("costs", price.avg);
   });
 
   return cityCard;
