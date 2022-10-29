@@ -10,8 +10,6 @@ export default class CityCard extends HTMLElement {
   attributeChangedCallback(property, oldValue, newValue) {
     if (oldValue === newValue) return;
 
-    this[property] = newValue;
-
     if (property === "location") {
       this.location.textContent = newValue;
     }
