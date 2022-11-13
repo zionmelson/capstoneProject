@@ -1,5 +1,4 @@
-import "./style.css";
-import lookup from "./scripts/lookup-city";
+import lookup from "./scripts/lookup-city.js";
 
 document.querySelector("#app").innerHTML = `
     <div id="main">
