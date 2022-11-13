@@ -81,6 +81,9 @@ document.querySelector("#app").innerHTML = `
               </div>
           </div>
         </div>
+        <div class="add-button">
+          <button class="add">Add</button>
+        </div>
         <div class="footer-section">
           <p class="website-input">Website: <a class="website-input" id="website"></a></p>
         </div>

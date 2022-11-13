@@ -4,6 +4,9 @@ import getPic from "./functions/fetch-airport-picture";
 import getInputs from "./functions/get-inputs";
 import createElement from "./functions/set-component-attributes";
 import reset from "./functions/reset";
+import { openDatabase, storeTrip } from "./functions/open-database";
+
+openDatabase();
 
 export default async function lookup() {
   reset();
@@ -16,6 +19,8 @@ export default async function lookup() {
 
     console.log(dataInfo);
     //console.log(picInfo);
+
+    storeTrip({ dataInfo, picInfo }, dataInfo.id);
 
     const cityCard = await createElement(dataInfo, picInfo);
     results.appendChild(cityCard);

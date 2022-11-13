@@ -9,10 +9,13 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "crypto-js": "^4.1.1",
     "vite": "^3.2.0"
   },
   "dependencies": {
-    "axios": "^1.1.2"
+    "axios": "^1.1.2",
+    "idb": "^7.1.1"
   },
   "main": "main.js",
   "repository": "https://github.com/zionmelson/capstoneProject.git",
