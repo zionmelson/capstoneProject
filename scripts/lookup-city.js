@@ -1,9 +1,12 @@
-import CityCard from "./city-component";
-import getData from "./functions/data-fetch";
-import getPic from "./functions/picture-fetch";
+import CityCard from "./component";
+import getData from "./functions/fetch-airport-info";
+import getPic from "./functions/fetch-airport-picture";
 import getInputs from "./functions/get-inputs";
-import createElement from "./functions/create-element";
+import createElement from "./functions/set-component-attributes";
 import reset from "./functions/reset";
+import { openDatabase, storeTrip } from "./functions/open-database";
+
+openDatabase();
 
 export default async function lookup() {
   reset();
@@ -15,7 +18,9 @@ export default async function lookup() {
     const picInfo = await getPic(dataInfo.location);
 
     console.log(dataInfo);
-    console.log(picInfo);
+    //console.log(picInfo);
+
+    storeTrip({ dataInfo, picInfo }, dataInfo.id);
 
     const cityCard = await createElement(dataInfo, picInfo);
     results.appendChild(cityCard);
@@ -25,3 +30,7 @@ export default async function lookup() {
 }
 
 customElements.define("city-card", CityCard);
+
+// add a few apis
+// https://rapidapi.com/aedbx-aedbx/api/aerodatabox
+//
