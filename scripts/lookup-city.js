@@ -1,10 +1,10 @@
-import CityCard from "./component";
-import getData from "./functions/fetch-airport-info";
-import getPic from "./functions/fetch-airport-picture";
-import getInputs from "./functions/get-inputs";
-import createElement from "./functions/set-component-attributes";
-import reset from "./functions/reset";
-import { openDatabase, storeTrip } from "./functions/open-database";
+import CityCard from "./component.js";
+import getData from "./functions/fetch-airport-info.js";
+import getPic from "./functions/fetch-airport-picture.js";
+import getInputs from "./functions/get-inputs.js";
+import createElement from "./functions/set-component-attributes.js";
+import reset from "./functions/reset.js";
+import { openDatabase, storeTrip } from "./functions/open-database.js";
 
 openDatabase();
 
