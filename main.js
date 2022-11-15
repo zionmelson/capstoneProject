@@ -20,7 +20,7 @@ document.querySelector("#app").innerHTML = `
             width: 20rem;
           }
           .city-output {
-            background-color: rgb(64, 64, 64);
+            background-color: rgba(64, 64, 64, 0.4);
             border-radius: 20px;
             min-height: 30rem;
             min-width: 25rem;
