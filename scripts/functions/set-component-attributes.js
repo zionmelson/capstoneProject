@@ -1,4 +1,4 @@
-import getInfo from "./fetch-city-info";
+import getInfo from "./fetch-city-info.js";
 
 export default async function createElement(dataInfo, picInfo) {
   const cityCard = document.createElement("city-card");
